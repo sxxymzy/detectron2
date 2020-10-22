@@ -248,6 +248,7 @@ class ShowAction(InferenceAction):
         logger.info(f"Processing {image_fpath}")
         # image = cv2.cvtColor(entry["image"], cv2.COLOR_BGR2GRAY)
         # image = np.tile(image[:, :, np.newaxis], [1, 1, 3])
+        image = entry["image"]
         data = extractor(outputs)
         image_vis = visualizer.visualize(image, data)
         entry_idx = context["entry_idx"] + 1

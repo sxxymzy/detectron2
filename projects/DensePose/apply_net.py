@@ -117,7 +117,7 @@ class InferenceAction(Action):
         elif os.path.isfile(input_spec):
             file_list = [input_spec]
         else:
-            file_list = glob.glob(input_spec)
+            file_list = sorted(glob.glob(input_spec), key=lambda p: int(os.path.splitext(os.path.basename(p))[0]))
         return file_list
 
 
